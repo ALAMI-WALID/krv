@@ -1,0 +1,161 @@
+/* ancien site */
+.example-wrapper {
+    margin-top: 3em;
+}
+/* From Uiverse.io by SelfMadeSystem */ 
+.absolute {
+    position: absolute;
+  }
+  
+  .inline-block {
+    display: inline-block;
+  }
+  
+  .loader {
+    display: flex;
+    margin: 5em 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .w-2 {
+    width: 0.5em;
+  }
+  
+  .dash {
+    animation: dashArray 2s ease-in-out infinite,
+      dashOffset 2s linear infinite;
+  }
+  
+  .spin {
+    animation: spinDashArray 2s ease-in-out infinite,
+      spin 8s ease-in-out infinite,
+      dashOffset 2s linear infinite;
+    transform-origin: center;
+  }
+  
+  @keyframes dashArray {
+    0% {
+      stroke-dasharray: 0 1 359 0;
+    }
+  
+    50% {
+      stroke-dasharray: 0 359 1 0;
+    }
+  
+    100% {
+      stroke-dasharray: 359 1 0 0;
+    }
+  }
+  
+  @keyframes spinDashArray {
+    0% {
+      stroke-dasharray: 270 90;
+    }
+  
+    50% {
+      stroke-dasharray: 0 360;
+    }
+  
+    100% {
+      stroke-dasharray: 270 90;
+    }
+  }
+  
+  @keyframes dashOffset {
+    0% {
+      stroke-dashoffset: 365;
+    }
+  
+    100% {
+      stroke-dashoffset: 5;
+    }
+  }
+  
+  @keyframes spin {
+    0% {
+      rotate: 0deg;
+    }
+  
+    12.5%,
+    25% {
+      rotate: 270deg;
+    }
+  
+    37.5%,
+    50% {
+      rotate: 540deg;
+    }
+  
+    62.5%,
+    75% {
+      rotate: 810deg;
+    }
+  
+    87.5%,
+    100% {
+      rotate: 1080deg;
+    }
+  }
+  
+  .can-do-it{
+    font-size: 1.5em;
+    font-weight: 400;
+    color: #ffffff;
+  }
+
+  /* home-hero-section */
+  .home-hero-section {
+    background-image: url('/public/images/92.svg');
+    background-repeat: no-repeat; /* Empêche la répétition */
+    height: 100vh;
+    background-size: cover; /* Redimensionne l'image pour qu'elle couvre toute la surface */
+    background-position: center; /* Centre l'image */
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3); /* Ombre blanche en bas */
+}
+
+#logoOne{
+    width: 100px;
+    height: 100px;
+    
+}
+
+
+ /* page home */
+     .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .brand-blue { color: #0ea5e9; }
+        .bg-brand-blue { background-color: #0ea5e9; }
+        .border-brand-blue { border-color: #0ea5e9; }
+        .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .hero-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        .sticky-nav {
+            backdrop-filter: blur(10px);
+            background-color: rgba(30, 58, 138, 0.95);
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .service-icon {
+            background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }

@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ViewController!{% endblock %}
+
+{% block body %}
+<section class="container mx-auto px-4 py-8 mt-20">
+  <h2 class="text-2xl font-bold mb-6">Détails de la demande de devis #{{ devis.id }}</h2>
+
+  <div class="bg-white shadow rounded-lg p-6 mb-6">
+    <p><strong>Matricule :</strong> {{ devis.mat }}</p>
+    <p><strong>Nom :</strong> {{ devis.lastName }} {{ devis.name }}</p>
+    <p><strong>Email :</strong> {{ devis.email }}</p>
+    <p><strong>Téléphone :</strong> {{ devis.phoe }}</p>
+    <p><strong>Poste :</strong> {{ devis.position }}</p>
+    <p><strong>Message :</strong><br>{{ devis.message }}</p>
+  </div>
+
+  {% if images is not empty %}
+    <div 
+    x-data="{ open: false, imageUrl: '' }" 
+    @keydown.escape.window="open = false"
+>
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    {% for image in images %}
+      <div 
+          class="border rounded overflow-hidden shadow cursor-pointer"
+          @click="imageUrl = '{{ asset('uploads/images/' ~ image.filename) }}'; open = true"
+      >
+        <img 
+          src="{{ asset('uploads/images/' ~ image.filename) }}" 
+          alt="Illustration" 
+          class="w-full h-48 object-cover"
+        >
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- Modal full screen -->
+  <div 
+    class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50" 
+    x-show="open"
+    x-transition
+  >
+    <div class="relative">
+      <button 
+        class="absolute top-4 right-4 text-white text-3xl" 
+        @click="open = false"
+      >&times;</button>
+
+      <img 
+        :src="imageUrl" 
+        class="max-w-full max-h-screen object-contain rounded"
+      >
+    </div>
+  </div>
+</div>
+
+  {% else %}
+    <p class="text-gray-500">Aucune image fournie pour ce devis.</p>
+  {% endif %}
+</section>
+{% endblock %}

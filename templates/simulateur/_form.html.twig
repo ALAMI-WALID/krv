@@ -1,0 +1,98 @@
+
+
+
+<div class="min-h-screen bg-gray-50 py-8" id="car-models">
+    <div class="max-w-4xl mx-auto px-4">
+        <div class="bg-white rounded-lg shadow-lg p-6" >
+            <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">
+                Estimation de Réparation Automobile
+            </h1>
+
+            <!-- Sélection du modèle de carrosserie -->
+          <!-- Sélection du modèle de carrosserie -->
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Votre véhicule</h2>
+                <div id="carModelsGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+                    {% for model in carModels %}
+                        <div class="car-model-card bg-white border border-gray-200 rounded-lg p-4 cursor-pointer hover:shadow-lg hover:border-blue-400 transition-all duration-300 text-center" 
+                             data-car-id="{{ model.id }}" data-car-name="{{ model.name }}">
+                            <div class="mb-3">
+                                {% if model.illustartion %}
+                                    <img src="/cartype/{{ model.illustartion }}.png" alt="{{ model.name }}" class="w-19 h-19 mx-auto object-contain">
+                                {% else %}
+                                    <div class="w-16 h-16 mx-auto bg-gray-100 rounded-lg flex items-center justify-center">
+                                        <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                        </svg>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <h3 class="font-medium text-gray-800 text-sm">{{ model.name }}</h3>
+                            
+                        </div>
+                    {% endfor %}
+                </div>
+                <div id="selectedCarInfo" class="hidden mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+                    <p class="text-sm text-blue-800">
+                        <span class="font-semibold">Véhicule sélectionné :</span> 
+                        <span id="selectedCarName"></span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Conteneur pour les éléments -->
+            <div id="elementsContainer" class="hidden">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Éléments disponibles</h2>
+                <div id="elementsList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                    <!-- Les éléments seront chargés ici via AJAX -->
+                </div>
+            </div>
+
+            <!-- Conteneur pour les sélections -->
+            <div id="selectionsContainer" class="hidden">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Je choisis le type de dégâts <small>(pour une meilleure prise en charge de mon sinistre)</small></h2>
+                <div id="selectionsList" class="space-y-4 mb-6">
+                    <!-- Les sélections seront affichées ici -->
+                </div>
+            </div>
+
+            <!-- Résumé des prix -->
+            <div id="priceContainer" class="hidden">
+                <div class="bg-blue-50 rounded-lg p-6 border border-blue-200">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Les dommages</h2>
+                    <div id="priceDetails" class="space-y-2 mb-4">
+                        <!-- Détails des prix -->
+                    </div>
+                    <div class="border-t border-blue-300 pt-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-semibold text-gray-800">Montant estimatif des réparations </span>
+                            <span id="totalPrice" class="text-2xl font-bold text-blue-600">0,00 €</span>
+                            
+                        </div>
+                        <small class="text-xs text-gray-500 mt-2 flex items-center space-x-1">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="gray" viewBox="0 0 20 20">
+                            <path fill="currentColor" d="M2.93 17.07A10 10 0 1 1 17.07 2.93A10 10 0 0 1 2.93 17.07m12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32M9 5h2v6H9zm0 8h2v2H9z"/>
+                          </svg>
+                          <span>Cette estimation est à titre informatif seulement et ne représente en aucun cas un devis contractuel. SVP Contactez-nous pour un devis précis.</span>
+                        </small>
+                    </div>
+                </div>
+            </div>  
+
+            <!-- Bouton de calcul -->
+              <div class="text-center mt-6">
+                <button id="calculateBtn" class="hidden bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    Calculer l'estimation
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Loading spinner -->
+<div id="loadingSpinner" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-4 rounded-lg shadow-lg">
+        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
+        <p class="mt-2 text-gray-600">Chargement...</p>
+    </div>
+</div>

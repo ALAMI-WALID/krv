@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Magasin KR-V - Fournitures Carrosserie & Peinture | Meaux 77</title>
+        <meta name="description" content="Magasin KR-V à Meaux - Spécialiste en fournitures de carrosserie, peinture automobile, matériels et consommables. Mécanique, sellerie, covering et dépannage.">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        <title>{% block title %}Magasin KR-V - Fournitures Automobile{% endblock %}</title>
+    
+        <!-- Meta descriptions pour SEO -->
+        <meta name="keywords" content="carrosserie, peinture automobile, fournitures auto, matériel carrosserie, Meaux, 77100, KR-V, magasin automobile, pièces détachées, accessoires auto, dépannage automobile, covering, sellerie, mécanique, consommables auto, fournitures peinture, matériel de carrosserie, fournitures de peinture, magasin de carrosserie, fournitures de mécanique, accessoires de carrosserie, pièces de rechange automobile, krv, mipa, troton, ">
+        <meta name="author" content="Magasin KR-V">
+        
+        <!-- Open Graph pour réseaux sociaux -->
+        <meta property="og:title" content="Magasin KR-V - Fournitures Automobile">
+        <meta property="og:description" content="Spécialiste en fournitures de carrosserie et peinture automobile à Meaux">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ absolute_url(path('app_home')) }}">
+    
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+                <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
+                <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+                 <!-- Google Fonts -->
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            <script src="//unpkg.com/alpinejs" defer></script>
+                <script src="https://cdn.tailwindcss.com"></script>
+                <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+                <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+                <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        {% endblock %}
+
+    </head>
+    <body class="bg-gray-50">
+  {# <header class="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+    <div {{react_component('navicon')}}></div>
+
+  </header> #}
+
+        <div id="root">
+            <!-- Le contenu React sera rendu ici -->
+        </div>
+  {% for message in app.flashes('success') %}
+    <section class="fixed top-6 right-4 z-50">
+    <div class="relative flex max-w-[422px] items-center rounded-lg border border-stroke bg-white p-4 py-[18px] shadow-pricing-4 sm:px-[30px] animate-fade-in">
+        <div class="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-full bg-green">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" color="green" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M20 15c-1 1 1.25 3.75 0 5s-4-1-5 0s-1.5 3-3 3s-2-2-3-3s-3.75 1.25-5 0s1-4 0-5s-3-1.5-3-3s2-2 3-3s-1.25-3.75 0-5s4 1 5 0s1.5-3 3-3s2 2 3 3s3.75-1.25 5 0s-1 4 0 5s3 1.5 3 3s-2 2-3 3ZM7 12l3 3l7-7"/></svg>
+        </div>
+
+        <div class="flex w-full items-center justify-between">
+        <div>
+            <h6 class="text-base font-semibold text-dark sm:text-lg">
+            Félicitations
+            </h6>
+            <p class="text-sm text-body-color">
+            {{ message }}
+            </p>
+        </div>
+        <button class="text-dark-5 hover:text-red" onclick="this.parentElement.parentElement.remove()">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="fill-current">
+            <path d="M9.9 9.00001L16.7625 2.13751C17.0156 1.88439 17.0156 1.49064 16.7625 1.23751C16.5094 0.984387 16.1156 0.984387 15.8625 1.23751L9 8.10001L2.1375 1.23751C1.88437 0.984387 1.49062 0.984387 1.2375 1.23751C0.984372 1.49064 0.984372 1.88439 1.2375 2.13751L8.1 9.00001L1.2375 15.8625C0.984372 16.1156 0.984372 16.5094 1.2375 16.7625C1.35 16.875 1.51875 16.9594 1.6875 16.9594C1.85625 16.9594 2.025 16.9031 2.1375 16.7625L9 9.90001L15.8625 16.7625C15.975 16.875 16.1437 16.9594 16.3125 16.9594C16.4812 16.9594 16.65 16.9031 16.7625 16.7625C17.0156 16.5094 17.0156 16.1156 16.7625 15.8625L9.9 9.00001Z" />
+            </svg>
+        </button>
+        </div>
+    </div>
+    </section>
+    {% endfor %}
+    
+        {% block body %}{% endblock %}
+            {# {% include  '/components/contact.html.twig' %}
+            {% include  '/components/footer.html.twig' %} #}
+
+        {% block script %}
+        {% endblock %}
+                {# <div {{react_component('click')}}></div> #}
+
+        <!-- Script pour Google Analytics (optionnel) -->
+        {% if app.environment == 'prod' %}
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'GA_MEASUREMENT_ID');
+        </script>
+        {% endif %}
+
+    </body>
+</html> 

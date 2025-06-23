@@ -1,0 +1,406 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SimulateurController!{% endblock %}
+
+{% block body %}
+
+<div class="container_simulateur ">
+  <!-- ====== Hero Section Start -->
+  <div class="relative bg-white pb-[110px] pt-[120px] lg:pt-[150px] ">
+    <div class="container mx-auto">
+      <div class="-mx-4 flex flex-wrap items-center">
+        <div class="w-full px-4 lg:w-5/12">
+          <div class="hero-content">
+            <h1
+              class="mb-5 text-4xl font-bold leading-[1.208]! text-dark sm:text-[42px] lg:text-[40px] xl:text-5xl ">
+              Estimation Gratuite <br />
+              et Rapide pour <br />
+              Votre Carrosserie
+            </h1>
+            <p class="mb-8 max-w-[480px] text-base text-body-color ">
+              Obtenez en 3 clics une estimation précise des réparations de votre véhicule.
+              Notre outil expert vous guide pas à pas pour évaluer les dommages.
+            </p>
+            <ul class="flex flex-wrap items-center">
+              <li>
+                <a href="javascript:void(0)"
+                  class="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-center text-base font-medium text-white hover:bg-blue-dark lg:px-7">
+                  Get Started
+                </a>
+              </li>
+              <li style="border: 1px solid #464646; border-radius: 50px; margin-left: 10px;">
+                <a href="#car-models"
+                  class="inline-flex items-center justify-center px-5 py-3 text-center text-base font-medium text-[#464646] hover:text-primary ">
+                  <span class="mr-2">
+                     <!-- From Uiverse.io by G4b413l --> 
+                      <div class="three-body">
+                      <div class="three-body__dot"></div>
+                      <div class="three-body__dot"></div>
+                      <div class="three-body__dot"></div>
+                      </div>
+                  </span>
+                    <p style="font-size:20px;"> Estimer</p>
+                </a>
+              </li>
+            </ul>
+            <div class="clients pt-16">
+              <h6 class="mb-6 flex items-center text-xs font-normal text-body-color ">
+                Partenaires officiels
+                <span class="ml-3 inline-block h-px w-8 bg-body-color"></span>
+              </h6>
+              {# <div class="flex items-center gap-4 xl:gap-[50px]">
+                <a href="javascript:void(0)" class="block py-3">
+                  <img src="https://cdn.tailgrids.com/assets/images/marketing/brands/oracle.svg" alt="oracle" />
+                </a>
+                <a href="javascript:void(0)" class="block py-3">
+                  <img src="https://cdn.tailgrids.com/assets/images/marketing/brands/intel.svg" alt="intel" />
+                </a>
+                <a href="javascript:void(0)" class="block py-3">
+                  <img src="https://cdn.tailgrids.com/assets/images/marketing/brands/logitech.svg" alt="logitech" />
+                </a>
+              </div> #}
+            </div>
+          </div>
+        </div>
+        <div class="hidden px-4 lg:block lg:w-1/12"></div>
+        <div class="w-full px-4 lg:w-6/12">
+          <div class="lg:ml-auto lg:text-right">
+            <div class="relative z-10 inline-block pt-11 lg:pt-0">
+              <img src="{{asset('images/estimer.png')}}" alt="hero"
+                class="max-w-full lg:ml-auto estimer" />
+              <span class="absolute -bottom-8 -left-8 z-[-1]">
+                <svg width="93" height="93" viewBox="0 0 93 93" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="2.5" cy="2.5" r="2.5" fill="#3056D3" />
+                  <circle cx="2.5" cy="24.5" r="2.5" fill="#3056D3" />
+                  <circle cx="2.5" cy="46.5" r="2.5" fill="#3056D3" />
+                  <circle cx="2.5" cy="68.5" r="2.5" fill="#3056D3" />
+                  <circle cx="2.5" cy="90.5" r="2.5" fill="#3056D3" />
+                  <circle cx="24.5" cy="2.5" r="2.5" fill="#3056D3" />
+                  <circle cx="24.5" cy="24.5" r="2.5" fill="#3056D3" />
+                  <circle cx="24.5" cy="46.5" r="2.5" fill="#3056D3" />
+                  <circle cx="24.5" cy="68.5" r="2.5" fill="#3056D3" />
+                  <circle cx="24.5" cy="90.5" r="2.5" fill="#3056D3" />
+                  <circle cx="46.5" cy="2.5" r="2.5" fill="#3056D3" />
+                  <circle cx="46.5" cy="24.5" r="2.5" fill="#3056D3" />
+                  <circle cx="46.5" cy="46.5" r="2.5" fill="#3056D3" />
+                  <circle cx="46.5" cy="68.5" r="2.5" fill="#3056D3" />
+                  <circle cx="46.5" cy="90.5" r="2.5" fill="#3056D3" />
+                  <circle cx="68.5" cy="2.5" r="2.5" fill="#3056D3" />
+                  <circle cx="68.5" cy="24.5" r="2.5" fill="#3056D3" />
+                  <circle cx="68.5" cy="46.5" r="2.5" fill="#3056D3" />
+                  <circle cx="68.5" cy="68.5" r="2.5" fill="#3056D3" />
+                  <circle cx="68.5" cy="90.5" r="2.5" fill="#3056D3" />
+                  <circle cx="90.5" cy="2.5" r="2.5" fill="#3056D3" />
+                  <circle cx="90.5" cy="24.5" r="2.5" fill="#3056D3" />
+                  <circle cx="90.5" cy="46.5" r="2.5" fill="#3056D3" />
+                  <circle cx="90.5" cy="68.5" r="2.5" fill="#3056D3" />
+                  <circle cx="90.5" cy="90.5" r="2.5" fill="#3056D3" />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ====== Hero Section End -->
+{% include 'simulateur/_form.html.twig' %}
+</div>
+{% endblock %}
+
+
+{% block script %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const carModelCards = document.querySelectorAll('.car-model-card');
+    const selectedCarInfo = document.getElementById('selectedCarInfo');
+    const selectedCarName = document.getElementById('selectedCarName');
+    const elementsContainer = document.getElementById('elementsContainer');
+    const elementsList = document.getElementById('elementsList');
+    const selectionsContainer = document.getElementById('selectionsContainer');
+    const selectionsList = document.getElementById('selectionsList');
+    const priceContainer = document.getElementById('priceContainer');
+    const calculateBtn = document.getElementById('calculateBtn');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+    
+    let damageLevels = [];
+    let selectedElements = new Map();
+    let selectedCarId = null;
+    
+    // Charger les niveaux de dommage au chargement de la page
+    loadDamageLevels();
+    
+    // Gestionnaires de clic sur les cartes de voiture
+    carModelCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Retirer la sélection précédente
+            carModelCards.forEach(c => c.classList.remove('ring-2', 'ring-blue-500', 'bg-blue-50'));
+            
+            // Ajouter la sélection à la carte cliquée
+            this.classList.add('ring-2', 'ring-blue-500', 'bg-blue-50');
+            
+            // Récupérer les informations de la voiture
+            selectedCarId = this.dataset.carId;
+            const carName = this.dataset.carName;
+            
+            // Afficher les informations de sélection
+            selectedCarName.textContent = carName;
+            selectedCarInfo.classList.remove('hidden');
+            
+            // Charger les éléments pour cette voiture
+            loadCarElements(selectedCarId);
+        });
+    });
+    
+    // Bouton de calcul
+    calculateBtn.addEventListener('click', calculatePrice);
+    
+    async function loadDamageLevels() {
+        try {
+            const response = await fetch('/api/damage-levels');
+            damageLevels = await response.json();
+        } catch (error) {
+            console.error('Erreur lors du chargement des niveaux de dommage:', error);
+        }
+    }
+    
+    async function loadCarElements(carModelId) {
+        showLoading();
+        try {
+            const response = await fetch(`/api/car-elements/${carModelId}`);
+            const elements = await response.json();
+            
+            displayElements(elements);
+            elementsContainer.classList.remove('hidden');
+            
+        } catch (error) {
+            console.error('Erreur lors du chargement des éléments:', error);
+        } finally {
+            hideLoading();
+        }
+    }
+    
+    function displayElements(elements) {
+        elementsList.innerHTML = '';
+        
+        elements.forEach(element => {
+            const elementCard = document.createElement('div');
+            elementCard.className = 'border border-gray-200 rounded-lg p-1 cursor-pointer hover:shadow-md transition-shadow';
+            elementCard.innerHTML = `
+                <div class="text-center">
+                    ${element.illustration ? `<img src="/element/${element.illustration}" alt="${element.name}" class="w-18 h-18 mx-auto mb-1 object-contain">` : ''}
+                    <h3 class="font-medium text-gray-800">${element.name}</h3>
+                    <input type="checkbox" class="mt-2 element-checkbox" data-element-id="${element.id}" data-element-name="${element.name}">
+                </div>
+            `;
+            
+            elementsList.appendChild(elementCard);
+            
+            // Gestionnaire de clic sur l'élément
+            elementCard.addEventListener('click', function(e) {
+                if (e.target.type !== 'checkbox') {
+                    const checkbox = elementCard.querySelector('.element-checkbox');
+                    checkbox.checked = !checkbox.checked;
+                    checkbox.dispatchEvent(new Event('change'));
+                }
+            });
+            
+            // Gestionnaire de changement de checkbox
+            const checkbox = elementCard.querySelector('.element-checkbox');
+            checkbox.addEventListener('change', function() {
+                handleElementSelection(this);
+            });
+        });
+    }
+    
+    function handleElementSelection(checkbox) {
+        const elementId = checkbox.dataset.elementId;
+        const elementName = checkbox.dataset.elementName;
+        
+        if (checkbox.checked) {
+            selectedElements.set(elementId, {
+                name: elementName,
+                damageLevel: null
+            });
+            showDamageSelection(elementId, elementName);
+        } else {
+            selectedElements.delete(elementId);
+            removeDamageSelection(elementId);
+        }
+        
+        updateSelectionsDisplay();
+    }
+    
+    function showDamageSelection(elementId, elementName) {
+        const selectionDiv = document.createElement('div');
+        selectionDiv.id = `selection-${elementId}`;
+        selectionDiv.className = 'bg-gray-50 rounded-lg p-4 border border-gray-200';
+        
+        selectionDiv.innerHTML = `
+            <h4 class="font-medium text-gray-800 mb-3">${elementName}</h4>
+            <div class="grid grid-cols-3 gap-2">
+              ${damageLevels.map(level => `
+                <label class="cursor-pointer">
+                  <input 
+                    type="radio" 
+                    name="damage-${elementId}" 
+                    value="${level.id}" 
+                    class="peer hidden damage-radio" 
+                    data-element-id="${elementId}"
+                  >
+                  <div class="flex flex-col items-center p-2 rounded-lg border border-gray-300 peer-checked:ring-2 peer-checked:ring-blue-500 transition">
+                    ${level.illustration ? `<img src="/damage/${level.illustration}" alt="${level.name}" class="w-17 h-17 object-contain mb-2">` : ''}
+                    <span class="text-sm text-center">${level.niveau}</span>
+                  </div>
+                </label>
+              `).join('')}
+            </div>
+          `;
+
+          selectionsList.appendChild(selectionDiv);
+
+          // Gestionnaires pour les boutons radio des dommages
+          const radioButtons = selectionDiv.querySelectorAll('.damage-radio');
+          radioButtons.forEach(radio => {
+            radio.addEventListener('change', function () {
+              if (this.checked) {
+                const elementData = selectedElements.get(elementId);
+                elementData.damageLevel = this.value;
+                selectedElements.set(elementId, elementData);
+                updateCalculateButton();
+              }
+            });
+          });
+        
+        selectionsContainer.classList.remove('hidden');
+    }
+    
+    function removeDamageSelection(elementId) {
+        const selectionDiv = document.getElementById(`selection-${elementId}`);
+        if (selectionDiv) {
+            selectionDiv.remove();
+        }
+        
+        if (selectionsList.children.length === 0) {
+            selectionsContainer.classList.add('hidden');
+        }
+        
+        updateCalculateButton();
+    }
+    
+    function updateSelectionsDisplay() {
+        // Cette fonction peut être étendue pour des mises à jour additionnelles
+    }
+    
+    function updateCalculateButton() {
+        const hasCompleteSelections = Array.from(selectedElements.values())
+            .some(element => element.damageLevel !== null);
+        
+        if (hasCompleteSelections) {
+            calculateBtn.classList.remove('hidden');
+        } else {
+            calculateBtn.classList.add('hidden');
+            priceContainer.classList.add('hidden');
+        }
+    }
+    
+    async function calculatePrice() {
+        if (!selectedCarId) {
+            alert('Veuillez sélectionner un modèle de véhicule.');
+            return;
+        }
+        
+        const selections = [];
+        
+        selectedElements.forEach((elementData, elementId) => {
+            if (elementData.damageLevel) {
+                selections.push({
+                    elementId: parseInt(elementId),
+                    damageLevelId: parseInt(elementData.damageLevel)
+                });
+            }
+        });
+        
+        if (selections.length === 0) {
+            alert('Veuillez sélectionner au moins un élément avec un niveau de dommage.');
+            return;
+        }
+        
+        showLoading();
+        
+        try {
+            const response = await fetch('/api/calculate-price', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    carModelId: parseInt(selectedCarId),
+                    selections: selections
+                })
+            });
+            
+            const result = await response.json();
+            
+            if (response.ok) {
+                displayPriceResults(result);
+            } else {
+                alert('Erreur lors du calcul: ' + (result.error || 'Erreur inconnue'));
+            }
+            
+        } catch (error) {
+            console.error('Erreur lors du calcul:', error);
+            alert('Erreur lors du calcul des prix.');
+        } finally {
+            hideLoading();
+        }
+    }
+    
+    function displayPriceResults(result) {
+        const priceDetails = document.getElementById('priceDetails');
+        const totalPrice = document.getElementById('totalPrice');
+        
+        priceDetails.innerHTML = '';
+        
+        result.details.forEach(detail => {
+            const detailDiv = document.createElement('div');
+            detailDiv.className = 'flex justify-between items-center py-2 border-b border-blue-200';
+            detailDiv.innerHTML = `
+                <div>
+                    <span class="font-medium">${detail.element}</span>
+                    <span class="text-sm text-gray-600 ml-2">(${detail.damage})</span>
+                </div>
+                <span class="font-medium">${detail.finalPrice.toFixed(2)} €</span>
+            `;
+            priceDetails.appendChild(detailDiv);
+        });
+        
+        totalPrice.textContent = `${result.total.toFixed(2)} €`;
+        priceContainer.classList.remove('hidden');
+    }
+    
+    function showLoading() {
+        loadingSpinner.classList.remove('hidden');
+    }
+    
+    function hideLoading() {
+        loadingSpinner.classList.add('hidden');
+    }
+    
+    function hideAllContainers() {
+        elementsContainer.classList.add('hidden');
+        selectionsContainer.classList.add('hidden');
+        priceContainer.classList.add('hidden');
+        calculateBtn.classList.add('hidden');
+        selectedCarInfo.classList.add('hidden');
+        selectedElements.clear();
+        elementsList.innerHTML = '';
+        selectionsList.innerHTML = '';
+        selectedCarId = null;
+        
+        // Retirer la sélection visuelle des cartes
+        carModelCards.forEach(c => c.classList.remove('ring-2', 'ring-blue-500', 'bg-blue-50'));
+    }
+});
+</script>
+{% endblock %}
