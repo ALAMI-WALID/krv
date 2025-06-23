@@ -41,15 +41,12 @@
         {% endblock %}
 
     </head>
-    <body class="bg-gray-50">
+    <body>
   {# <header class="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
     <div {{react_component('navicon')}}></div>
 
   </header> #}
 
-        <div id="root">
-            <!-- Le contenu React sera rendu ici -->
-        </div>
   {% for message in app.flashes('success') %}
     <section class="fixed top-6 right-4 z-50">
     <div class="relative flex max-w-[422px] items-center rounded-lg border border-stroke bg-white p-4 py-[18px] shadow-pricing-4 sm:px-[30px] animate-fade-in">
